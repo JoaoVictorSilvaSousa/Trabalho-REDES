@@ -1,0 +1,137 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    /* Fundo mesclado entre vermelho escuro e grafite */
+    background: linear-gradient(to right, #8b0000, #36454F); /* Vermelho escuro para grafite */
+    color: #e0e0e0; /* Cor do texto clara para contrastar com o fundo escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; /* Remover margem padrão do body */
+    box-sizing: border-box;
+    padding: 20px; /* Adicionar um pouco de padding para o container não grudar nas bordas */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo semi-transparente para o container */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco, se suportado */
+    padding: 35px 50px; /* Mais padding para um visual mais espaçoso */
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+    width: 100%;
+    max-width: 650px; /* Ligeiramente mais largo */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+}
+
+h1 {
+    color: #E6E6FA; /* Um tom de lavanda/azul claro para o título */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em; /* Título maior */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto do título */
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+strong {
+    color: #f0f0f0; /* Um branco levemente acinzentado */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Mais espaço entre os grupos de formulário */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Mais espaço abaixo do label */
+    font-weight: bold;
+    color: #B0C4DE; /* Um azul mais suave para os labels */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px; /* Mais padding para os inputs */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda mais suave */
+    border-radius: 6px; /* Cantos arredondados */
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo do input semi-transparente */
+    color: #f0f0f0; /* Cor do texto no input */
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Placeholder mais claro */
+}
+
+input[type="text"]:focus {
+    border-color: #6495ED; /* Borda azul ao focar */
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none; /* Remover outline padrão do navegador */
+}
+
+button {
+    width: 100%;
+    padding: 14px; /* Mais padding para o botão */
+    background-color: #6495ED; /* Azul vibrante */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em; /* Fonte maior no botão */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+button:hover {
+    background-color: #4169E1; /* Azul um pouco mais escuro no hover */
+    transform: translateY(-2px); /* Efeito sutil de "elevação" */
+}
+
+.results-box {
+    margin-top: 35px; /* Mais espaço acima da caixa de resultados */
+    padding: 25px; /* Mais padding */
+    border-radius: 8px;
+    border-left-width: 6px; /* Borda lateral mais grossa */
+    border-left-style: solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+.results-sucesso {
+    background-color: rgba(40, 167, 69, 0.15); /* Fundo verde semi-transparente */
+    border-left-color: #28a745; /* Borda verde sólida */
+    color: #e2f0e6; /* Texto claro para sucesso */
+}
+
+.results-erro {
+    background-color: rgba(220, 53, 69, 0.15); /* Fundo vermelho semi-transparente */
+    border-left-color: #dc3545; /* Borda vermelha sólida */
+    color: #f8d7da; /* Texto claro para erro */
+}
+
+.results-erro h2 {
+    color: #f8d7da; /* Garante que o título de erro seja claro */
+}
+
+.conclusao-sim {
+    color: #90EE90; /* Verde claro para conclusão positiva */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.conclusao-nao {
+    color: #FFB6C1; /* Rosa claro para conclusão negativa */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2); /* Linha divisória mais suave */
+    margin: 25px 0;
+}

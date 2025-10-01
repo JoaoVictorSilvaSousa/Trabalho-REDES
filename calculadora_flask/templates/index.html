@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Redes e IP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>--- Calculadora de Redes e IP ---</h1>
+        <p>O IP de origem fixo é: <strong>{{ ip_origem }}</strong></p>
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="bits">Quantidade de Bits da Máscara:</label>
+                <input type="text" id="bits" name="bits" placeholder="/24" required>
+            </div>
+            <div class="form-group">
+                <label for="ip_destino">IP de Destino:</label>
+                <input type="text" id="ip_destino" name="ip_destino" placeholder="192.168.1.200" required>
+            </div>
+            <button type="submit">Analisar Conexão</button>
+        </form>
+
+        {% if status %}
+            <div class="results-box {% if status == 'sucesso' %}results-sucesso{% else %}results-erro{% endif %}">
+                
+                {% if status == 'sucesso' %}
+                    <h2>--- Análise Completa ---</h2>
+                    <h3>Máscara de Rede (/{{ resultados.bits }})</h3>
+                    <p><strong>Decimal:</strong> {{ resultados.mascara_decimal }}</p>
+                    <h3>Análise de Rede</h3>
+                    <p><strong>Rede da Origem ({{ ip_origem }}):</strong> {{ resultados.rede_origem }}</p>
+                    <p><strong>Rede do Destino ({{ resultados.ip_destino }}):</strong> {{ resultados.rede_destino }}</p>
+                    <hr>
+                    {% if resultados.mesma_rede %}
+                        <h3 class="conclusao-sim">Conclusão: O IP de destino ESTÁ na mesma rede da origem.</h3>
+                    {% else %}
+                        <h3 class="conclusao-nao">Conclusão: O IP de destino NÃO ESTÁ na mesma rede da origem.</h3>
+                    {% endif %}
+                {% else %}
+                    <h2>Erro na Validação</h2>
+                    <p>{{ mensagem_erro }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
